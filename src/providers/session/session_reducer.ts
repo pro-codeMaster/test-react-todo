@@ -1,3 +1,6 @@
+const actions: TReducerActions = {
+}
+
 /* eslint-disable no-console */
 export const sessionReducer = (state: TSessionContextValues, action: TReducerAction) => {
   const fx = actions[action.type]
