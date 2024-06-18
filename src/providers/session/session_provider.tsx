@@ -1,6 +1,7 @@
 import { useImmerReducer } from "use-immer";
 import { ReactNode } from "react";
-import { SessionContext, initialState } from './session_context'
+import { SessionContext, initialState } from "./session_context";
+import { sessionReducer } from "./session_reducer";
 
 type SessionProviderProps = {
   children: ReactNode;
