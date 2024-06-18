@@ -1,4 +1,4 @@
-interface TUser {
+export interface TUser {
   id: string
   idHash: string
   token: string
@@ -22,14 +22,8 @@ export interface TTodoData {
 export type TSessionContextValues = {
   status: 'INITIALIZING' | 'AUTHENTICATED' | 'DEAUTHENTICATED' | 'LOGIN' | 'READY' | 'LOADING'
   user: TUser | undefined
-  currentLocation: TGooseClaimLocation
-  locationsData: Record<string, TGooseLocationData>
+  todoData: Record<string, TTodoData>
 }
 
 export type TSessionAction = (state: TSessionContextValues, payload?: GenericSimpleBag) => TSessionContextValues | void
 export type TReducerActions = Record<string, TSessionAction>
-
-export interface TUserStoreData {
-  user: TUser
-  todoData: Record<string, TTodoData>
-}

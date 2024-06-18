@@ -1,23 +1,21 @@
 import { createContext, useContext } from 'react'
 
-import { LocalStore } from './store'
-import type { TSessionContextValues, TUserStoreData } from './session'
+import { LocalStore } from '../store'
+import type { TSessionContextValues } from './session'
 
 const USER_STORE_KEY = 'codemaster-todo'
-const userStore = LocalStore.getData<TUserStoreData>(USER_STORE_KEY)
+const userStore = LocalStore.getData<TSessionContextValues>(USER_STORE_KEY)
 
 export const initialState: TSessionContextValues = userStore
   ? {
       status: 'INITIALIZING',
       user: userStore.user,
-      currentLocation: userStore.currentLocation,
-      locationsData: userStore.locationsData || {},
+      todoData: userStore.todoData || {},
     }
   : {
       status: 'INITIALIZING',
       user: { id: '', token: '', username: '', claims: [], idHash: '', email: '', idDb: '' },
-      currentLocation: { id: '', name: '', displayName: '' },
-      locationsData: {},
+      todoData: {},
     }
 
 export const SessionContext = createContext<{
