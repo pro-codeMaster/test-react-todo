@@ -10,12 +10,15 @@ export const initialState: TSessionContextValues = userStore
   ? {
       status: 'INITIALIZING',
       user: userStore.user,
+      currentData: userStore.currentData,
       todoData: userStore.todoData || {},
     }
   : {
       status: 'INITIALIZING',
       user: { id: '', token: '', username: '', claims: [], idHash: '', email: '', idDb: '' },
+      currentData: { id: '', name: '', displayName: '' },
       todoData: {},
+      
     }
 
 export const SessionContext = createContext<{

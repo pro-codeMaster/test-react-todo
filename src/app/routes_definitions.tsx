@@ -1,3 +1,5 @@
+import type { TRouteNames, TRoutesOpt } from './types'
+
 export const routes = {
   signIn: {
     uid: '',
@@ -13,3 +15,7 @@ export const routes = {
     authenticated: false,
   },
 }
+
+export const routeKeys = Object.keys(routes as TRoutesOpt) as TRouteNames[]
+// sets uid as the name of the route
+routeKeys.forEach((k) => (routes[k].uid = k))
