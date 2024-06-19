@@ -12,7 +12,7 @@ const RouteConfig = () => {
     <Routes>
       {Object.keys(routes).map((section) => (
         <Route key={section} element={<AppLayout />}>
-          <Route path="*" element={<div>Hello World</div>} />
+          <Route path="*" element={<div>not Found</div>} />
         </Route>
       ))}
     </Routes>
