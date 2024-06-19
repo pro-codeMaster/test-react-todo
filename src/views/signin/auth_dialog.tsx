@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ModalType } from "./index.d";
 import { LogIn } from "./log_in";
+import { SignUp } from "./sign_up_form";
 import { TUser } from "@providers/session/session";
 
 export const AuthDialog = ({
@@ -26,6 +27,15 @@ export const AuthDialog = ({
     switch (modalType) {
       case ModalType.signIn:
         return <LogIn switchModalType={switchModalType} saveUser={saveUser} />;
+      case ModalType.signUp:
+        return (
+          <SignUp
+            switchModalType={switchModalType}
+            saveUser={saveUser}
+            email={email}
+          />
+        );
+
       default:
         return null;
     }
