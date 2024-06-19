@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ModalType } from "./index.d";
 import { LogIn } from "./log_in";
 import { SignUp } from "./sign_up_form";
+import { ForgotPassword } from "./forgot_password";
 import { TUser } from "@providers/session/session";
 
 export const AuthDialog = ({
@@ -33,6 +34,13 @@ export const AuthDialog = ({
             switchModalType={switchModalType}
             saveUser={saveUser}
             email={email}
+          />
+        );
+      case ModalType.forgotPassword:
+        return (
+          <ForgotPassword
+            switchModalType={switchModalType}
+            saveEmail={saveEmail}
           />
         );
 

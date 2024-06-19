@@ -11,7 +11,6 @@ import { ModalType, TSignUpProps } from "./index.d";
 
 export const SignUp = ({ switchModalType, saveUser, email }: TSignUpProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  // const [isNewUser, setIsNewUser] = useState(true)
   const [lastMsg, setLastMsg] = useState("");
 
   const formik = useFormik({
