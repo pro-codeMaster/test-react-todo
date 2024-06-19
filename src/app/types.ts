@@ -13,7 +13,7 @@ export interface TRouteConfig {
   uid: TRouteNames
   title?: string
   path?: string
-  component?: ComponentType
+  component: ComponentType
   authenticated: boolean
   target?: '_blank'
 }
