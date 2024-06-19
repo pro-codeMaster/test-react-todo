@@ -1,10 +1,11 @@
 import type { TRouteNames, TRoutesOpt } from './types'
 
+const BASE_PATH = 'test-react-todo';
 export const routes = {
   signIn: {
     uid: '',
     title: 'Sign In',
-    path: '/signin',
+    path: `${BASE_PATH}/signin`,
     component: () => <div>SignIn</div>,
     authenticated: false,
   },

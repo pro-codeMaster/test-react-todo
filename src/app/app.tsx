@@ -1,4 +1,4 @@
-import { SessionProvider } from "@providers/session";
+import { SessionProvider } from 'providers'
 import { AppRoutes } from "./routes";
 
 export const App = () => {
